@@ -1,12 +1,14 @@
-export const Buttons = () => {
+import { Btn, WrapperBtn } from './Buttons.styled';
+
+export const Buttons = ({ options, onLeaveFeedback }) => {
+  const [good, neutral, bad] = options;
   return (
     <>
-      <h2>Please leave feedback</h2>
-      <div>
-        <button>Good</button>
-        <button>Neutral</button>
-        <button>Bad</button>
-      </div>
+      <WrapperBtn>
+        <Btn onClick={() => onLeaveFeedback(good)}>Good</Btn>
+        <Btn onClick={() => onLeaveFeedback(neutral)}>Neutral</Btn>
+        <Btn onClick={() => onLeaveFeedback(bad)}>Bad</Btn>
+      </WrapperBtn>
     </>
   );
 };
